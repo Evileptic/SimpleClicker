@@ -33,11 +33,13 @@ namespace SimpleClicker
             {
                 var targetActorRef = Object.Instantiate(_staticData.TargetPrefab, _sceneData.PlayGround.transform);
                 targetActorRef.Init(_ecsWorld);
+                
                 var anchoredPos = targetActorRef.RectTransform.anchoredPosition;
                 anchoredPos.x = Random.Range(xSpawnMin, xSpawnMax);
                 anchoredPos.y = Random.Range(ySpawnMin, ySpawnMax);
-                targetActorRef.TargetImage.sprite = _runtimeData.CurrentLevelData.TargetImage;
+                
                 targetActorRef.RectTransform.anchoredPosition = anchoredPos;
+                targetActorRef.TargetImage.sprite = _runtimeData.CurrentLevelData.TargetImage;
                 targetActorRef.HealthPoints = _runtimeData.CurrentLevelData.Difficult.TargetsHealthPoints;
             
                 _spawnTargetFilter.GetEntity(index).Destroy();

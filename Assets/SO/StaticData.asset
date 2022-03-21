@@ -18,10 +18,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 603da6b322f24064aad0285da4071f63, type: 2}
   - {fileID: 11400000, guid: 9028dbe2c9e1bb7478df84974c629d4d, type: 2}
   - {fileID: 11400000, guid: 92232dfe1c28b8a4797ebc970ca8fed7, type: 2}
-  DefaultDifficult: {fileID: 0}
+  DefaultDifficult: {fileID: 11400000, guid: c2ed1c3bf0065da4cab205c9479670ff, type: 2}
   DefaultDamage: 1
   WithBonusDamage: 2
   LevelEntryPrefab: {fileID: 4265718028842303522, guid: b0d4a09a5d35bc94c8d5b94acdf2a2ba, type: 3}
+  BlockedEntryPrefab: {fileID: 6402776095575716021, guid: b1808a014b8e9694caf0e26104eb7a8b, type: 3}
   TargetPrefab: {fileID: 7308907100057158471, guid: 8a6d357cd6085a8499470cbcdd1c6a28, type: 3}
   DoubleDamageBonusPrefab: {fileID: 0}
   DoubleSizeBonusPrefab: {fileID: 0}

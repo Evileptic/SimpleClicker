@@ -13,6 +13,7 @@ namespace SimpleClicker
 
         [Header("Prefabs")] 
         public LevelEntryActor LevelEntryPrefab;
+        public GameObject BlockedEntryPrefab;
         public TargetActor TargetPrefab;
         public BonusActor DoubleDamageBonusPrefab;
         public BonusActor DoubleSizeBonusPrefab;
