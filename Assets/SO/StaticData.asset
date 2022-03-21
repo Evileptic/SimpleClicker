@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56263f671051b9b4fa060befba8d5a4c, type: 3}
+  m_Name: StaticData
+  m_EditorClassIdentifier: 
+  Levels:
+  - {fileID: 11400000, guid: a84540ffb2c880744b2f53bc52c76c5a, type: 2}
+  - {fileID: 11400000, guid: f4389289a6e4b494eb77cc40f8db1ca9, type: 2}
+  - {fileID: 11400000, guid: 603da6b322f24064aad0285da4071f63, type: 2}
+  - {fileID: 11400000, guid: 9028dbe2c9e1bb7478df84974c629d4d, type: 2}
+  - {fileID: 11400000, guid: 92232dfe1c28b8a4797ebc970ca8fed7, type: 2}
+  DefaultDifficult: {fileID: 0}
+  DefaultDamage: 1
+  WithBonusDamage: 2
+  LevelEntryPrefab: {fileID: 4265718028842303522, guid: b0d4a09a5d35bc94c8d5b94acdf2a2ba, type: 3}
+  TargetPrefab: {fileID: 7308907100057158471, guid: 8a6d357cd6085a8499470cbcdd1c6a28, type: 3}
+  DoubleDamageBonusPrefab: {fileID: 0}
+  DoubleSizeBonusPrefab: {fileID: 0}
+  TargetStunBonusPrefab: {fileID: 0}
+  LevelClickClip: {fileID: 8300000, guid: 0569126909b15a44e993a45d3a72fa86, type: 3}
+  LevelClickClipVolume: 1
+  StartGameClip: {fileID: 8300000, guid: 9f46795335616664fad1a0adff2c0735, type: 3}
+  StartGameClipVolume: 1
