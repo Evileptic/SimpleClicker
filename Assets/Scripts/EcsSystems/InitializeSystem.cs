@@ -23,7 +23,7 @@ namespace SimpleClicker
             
             var canvasRect = _sceneData.UI.GetComponent<RectTransform>().rect;
             var targetRect = _staticData.TargetPrefab.GetComponent<RectTransform>().rect;
-            _runtimeData.XSpawnMin = -canvasRect.width / 2f + targetRect.width / 2f + _staticData.SpawnLimitShift;
+            _runtimeData.XSpawnMin = -canvasRect.width / 2f + targetRect.width / 2f;
             _runtimeData.XSpawnMax = -_runtimeData.XSpawnMin;
             _runtimeData.YSpawnMin = -canvasRect.height / 2f + targetRect.height / 2f + _staticData.SpawnLimitShift;;
             _runtimeData.YSpawnMax = -_runtimeData.YSpawnMin;

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SimpleClicker
 {
-    public class SaveLeaderBoardSystem : IEcsInitSystem, IEcsRunSystem
+    public class SaveLeaderBoardSystem : IEcsRunSystem
     {
         private EcsFilter<SaveLeaderBoardEvent> _saveLeaderBoardFilter;
 
@@ -14,12 +14,6 @@ namespace SimpleClicker
         private StaticData _staticData;
         private SceneData _sceneData;
         private EcsWorld _ecsWorld;
-
-        public void Init()
-        {
-            if (!Directory.Exists(_runtimeData.SaveDataPath))
-                Directory.CreateDirectory(_runtimeData.SaveDataPath);
-        }
 
         public void Run()
         {

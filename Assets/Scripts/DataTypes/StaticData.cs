@@ -16,6 +16,7 @@ namespace SimpleClicker
         public float SizeBonusMultiplier;
         public float SpawnLimitShift;
         public Sprite DefaultBonusSprite;
+        public LeaderInfo[] FakeLeaderBoaed;
 
         [Header("Prefabs")] 
         public LevelEntryActor LevelEntryPrefab;
