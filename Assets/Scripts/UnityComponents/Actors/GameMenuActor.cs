@@ -10,6 +10,7 @@ namespace SimpleClicker
         public TextMeshProUGUI TargetsText;
         public TextMeshProUGUI ProgressText;
         public Image ProgressImage;
+        public Image BonusImage;
         
         protected override void ExpandEntity(EcsEntity entity)
         {

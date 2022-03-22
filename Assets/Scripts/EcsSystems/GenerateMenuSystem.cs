@@ -7,6 +7,7 @@ namespace SimpleClicker
     {
         private EcsFilter<GenerateMenuEvent> _generateMenuFilter;
 
+        private RuntimeData _runtimeData;
         private StaticData _staticData;
         private SceneData _sceneData;
         private EcsWorld _ecsWorld;
@@ -15,8 +16,11 @@ namespace SimpleClicker
         {
             foreach (var index in _generateMenuFilter)
             {
-                foreach (var levelData in _staticData.Levels)
+                _runtimeData.LevelEntries = new LevelEntryActor[_staticData.Levels.Length];
+                
+                for (int i = 0; i < _staticData.Levels.Length; i++)
                 {
+                    var levelData = _staticData.Levels[i];
                     var levelEntryRef = Object.Instantiate(
                         _staticData.LevelEntryPrefab, 
                         _sceneData.UI.LevelGridContainer);
@@ -26,12 +30,16 @@ namespace SimpleClicker
                     levelEntryRef.LevelNameText.text = levelData.LevelName;
                     levelEntryRef.BackgroundImage.sprite = levelData.BackgroundImage;
 
-                    for (int i = 0; i <= levelData.Difficult.DifficultLevel; i++)
-                        levelEntryRef.DifficultSculls[i].SetActive(true);
+                    for (int j = 0; j <= levelData.Difficult.DifficultLevel; j++)
+                        levelEntryRef.DifficultSculls[j].SetActive(true);
+
+                    _runtimeData.LevelEntries[i] = levelEntryRef;
                 }
                 
                 for (int i = 0; i < 19; i++)
                     Object.Instantiate(_staticData.BlockedEntryPrefab, _sceneData.UI.LevelGridContainer);
+
+                _ecsWorld.NewEntity().Get<SetLevelProgressEvent>();
             }
         }
     }

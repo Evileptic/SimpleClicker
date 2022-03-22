@@ -25,6 +25,8 @@ MonoBehaviour:
   SaveDataFolder: SaveData
   TargetsForBonus: 5
   SizeBonusMultiplier: 2
+  SpawnLimitShift: 150
+  DefaultBonusSprite: {fileID: 21300000, guid: bdd2216807e1ddb499c08f6fd5760167, type: 3}
   LevelEntryPrefab: {fileID: 4265718028842303522, guid: b0d4a09a5d35bc94c8d5b94acdf2a2ba, type: 3}
   BlockedEntryPrefab: {fileID: 6402776095575716021, guid: b1808a014b8e9694caf0e26104eb7a8b, type: 3}
   TargetPrefab: {fileID: 7308907100057158471, guid: 8a6d357cd6085a8499470cbcdd1c6a28, type: 3}
@@ -37,3 +39,7 @@ MonoBehaviour:
   LevelClickClipVolume: 1.5
   StartGameClip: {fileID: 8300000, guid: 9f46795335616664fad1a0adff2c0735, type: 3}
   StartGameClipVolume: 1
+  BeatClip: {fileID: 8300000, guid: 86331d582cb0d9042b92415febd88980, type: 3}
+  BeatClipVolume: 1
+  BonusClip: {fileID: 8300000, guid: bdd0afe240bb7c04fbd3ce328e473c2c, type: 3}
+  BonusClipVolume: 1

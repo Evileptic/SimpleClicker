@@ -14,6 +14,8 @@ namespace SimpleClicker
         public string SaveDataFolder;
         public int TargetsForBonus;
         public float SizeBonusMultiplier;
+        public float SpawnLimitShift;
+        public Sprite DefaultBonusSprite;
 
         [Header("Prefabs")] 
         public LevelEntryActor LevelEntryPrefab;
@@ -27,5 +29,9 @@ namespace SimpleClicker
         public float LevelClickClipVolume;
         public AudioClip StartGameClip;
         public float StartGameClipVolume;
+        public AudioClip BeatClip;
+        public float BeatClipVolume;
+        public AudioClip BonusClip;
+        public float BonusClipVolume;
     }
 }

@@ -34,6 +34,10 @@ namespace SimpleClicker
 
                 if (--_runtimeData.TargetBonusRemains == 0)
                     _ecsWorld.NewEntity().Get<SpawnBonusEvent>();
+                
+                _sceneData.AudioManager.EffectSource.PlayOneShot(
+                    _staticData.BeatClip,
+                    _staticData.BeatClipVolume);
             }
         }
 

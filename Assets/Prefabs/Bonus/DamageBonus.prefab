@@ -54,6 +54,7 @@ MonoBehaviour:
   BonusType: 0
   BonusTime: 3
   RectTransform: {fileID: 813228128974438107}
+  BonusIcon: {fileID: 813228128974438116}
 --- !u!222 &813228128974438117
 CanvasRenderer:
   m_ObjectHideFlags: 0

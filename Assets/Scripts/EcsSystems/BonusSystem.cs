@@ -10,6 +10,7 @@ namespace SimpleClicker
 
         private RuntimeData _runtimeData;
         private StaticData _staticData;
+        private SceneData _sceneData;
         private EcsWorld _ecsWorld;
         
         public void Run()
@@ -29,10 +30,16 @@ namespace SimpleClicker
                         _runtimeData.FreezeBonusEnabled = true;
                         break;
                 }
+
+                _sceneData.UI.GameMenu.BonusImage.sprite = bonusActorRef.BonusIcon.sprite;
                 Object.Destroy(bonusActorRef.gameObject);
                 _runtimeData.BonusMode = true;
                 _runtimeData.PlayerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].UsedBonuses++;
                 _ecsWorld.NewEntity().Get<WaitForBonusEndFlag>().WaitTimer = bonusActorRef.BonusTime;
+                
+                _sceneData.AudioManager.EffectSource.PlayOneShot(
+                    _staticData.BonusClip,
+                    _staticData.BonusClipVolume);
             }
 
             foreach (var index in _waitForBonusEndFilter)
@@ -45,6 +52,7 @@ namespace SimpleClicker
                     _runtimeData.SizeBonusEnabled = false;
                     _runtimeData.FreezeBonusEnabled = false;
                     _runtimeData.TargetBonusRemains = _staticData.TargetsForBonus;
+                    _sceneData.UI.GameMenu.BonusImage.sprite = _staticData.DefaultBonusSprite;
                     _waitForBonusEndFilter.GetEntity(index).Destroy();
                 }
                 else

@@ -11,8 +11,7 @@ namespace SimpleClicker
         public GameObject[] DifficultSculls;
         public Image BackgroundImage;
         public TextMeshProUGUI LevelNameText;
-
-        [SerializeField] private Button EntryButton;
+        public Button EntryButton;
 
         protected override void ExpandEntity(EcsEntity entity)
         {

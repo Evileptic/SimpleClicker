@@ -14,6 +14,7 @@ namespace SimpleClicker
         public Dictionary<string, float> Leaderboard;
         public int TargetBonusRemains;
         public PlayerData PlayerData;
+        public LevelEntryActor[] LevelEntries;
 
         [Header("Bonus States")]
         public bool BonusMode;

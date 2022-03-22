@@ -21,14 +21,21 @@ namespace SimpleClicker
                 _sceneData.UI.MainMenu.SetActive(true);
                 _sceneData.UI.LevelPreview.gameObject.SetActive(true);
 
+                var playerData = _runtimeData.PlayerData;
                 if (_endLevelFilter.Get1(index).IsWin)
                 {
-                    _runtimeData.PlayerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].Wins++;
+                    if (_runtimeData.CurrentLevelData.Id == playerData.CurrentLevel)
+                    {
+                        playerData.CurrentLevel++;
+                        _ecsWorld.NewEntity().Get<SetLevelProgressEvent>();
+                    }
+
+                    playerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].Wins++;
                     _ecsWorld.NewEntity().Get<SaveLeaderBoardEvent>();
                 }
                 else
                 {
-                    _runtimeData.PlayerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].Loses++;
+                    playerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].Loses++;
                 }
 
                 _ecsWorld.NewEntity().Get<SetWinRateEvent>().LevelId = _runtimeData.CurrentLevelData.Id;
