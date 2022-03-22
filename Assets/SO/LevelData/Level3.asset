@@ -15,4 +15,4 @@ MonoBehaviour:
   LevelName: Sunset Village
   Difficult: {fileID: 11400000, guid: 097d01a0c2738d14080d4f6243ad7dd1, type: 2}
   BackgroundImage: {fileID: 21300000, guid: 3be1e5a857466624a9ca6726929f8d14, type: 3}
-  TargetImage: {fileID: 21300000, guid: b56754f77f76b0442a22e8639b49492a, type: 3}
+  TargetImage: {fileID: 21300000, guid: c4d868f621c8e6345aa33803add50bb3, type: 3}

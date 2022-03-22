@@ -15,4 +15,4 @@ MonoBehaviour:
   LevelName: Hello Ciri
   Difficult: {fileID: 11400000, guid: 0794942b8d2b14942844c0bf555e4322, type: 2}
   BackgroundImage: {fileID: 21300000, guid: 0877601753ccef346b9c77a03dd29817, type: 3}
-  TargetImage: {fileID: 21300000, guid: b56754f77f76b0442a22e8639b49492a, type: 3}
+  TargetImage: {fileID: 21300000, guid: ee3f3822563789b41b1a0b6fdcfdfc91, type: 3}

@@ -21,6 +21,7 @@ namespace SimpleClicker
                 actor.Init(_ecsWorld);
 
             _ecsWorld.NewEntity().Get<GenerateMenuEvent>();
+            _ecsWorld.NewEntity().Get<LoadAudioSettingsEvent>();
         }
     }
 }

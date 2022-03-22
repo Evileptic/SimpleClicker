@@ -19,35 +19,28 @@ namespace SimpleClicker
                 ref var targetEntity = ref _targetDamageFilter.GetEntity(index);
                 var targetActorRef = _targetDamageFilter.Get1(index).ActorRef;
 
-                int targetDamage = _runtimeData.DoubleDamageBonusEnabled
-                    ? _staticData.WithBonusDamage
-                    : _staticData.DefaultDamage;
+                int killValue = _runtimeData.DoubleDamageBonusEnabled
+                    ? _staticData.WithDoubleBonus
+                    : _staticData.WithoutDoubleBonus;
 
-                targetActorRef.HealthPoints -= targetDamage;
-                if (targetActorRef.HealthPoints <= 0)
-                {
-                    targetEntity.Destroy();
-                    Object.Destroy(targetActorRef.gameObject);
-                    SetUIProgress();
-                    
-                    if (_runtimeData.CurrentLevelData.Difficult.TargetsForWin == _runtimeData.KilledTargets)
-                        _ecsWorld.NewEntity().Get<EndLevelEvent>().IsWin = true;
-                    else
-                        _ecsWorld.NewEntity().Get<SpawnTargetEvent>();
-                }
+                targetEntity.Destroy();
+                Object.Destroy(targetActorRef.gameObject);
+                SetUIProgress(killValue);
+
+                if (_runtimeData.CurrentLevelData.Difficult.TargetsForWin == _runtimeData.KilledTargets)
+                    _ecsWorld.NewEntity().Get<EndLevelEvent>().IsWin = true;
                 else
-                {
-                    targetEntity.Del<DamageEvent>();
-                }
+                    _ecsWorld.NewEntity().Get<SpawnTargetEvent>();
             }
         }
 
-        private void SetUIProgress()
+        private void SetUIProgress(int killValue)
         {
             var gameMenu = _sceneData.UI.GameMenu;
             var currentDifficult = _runtimeData.CurrentLevelData.Difficult;
-            gameMenu.ProgressText.text = 
-                $"{++_runtimeData.KilledTargets} / {currentDifficult.TargetsForWin}";
+            _runtimeData.KilledTargets += killValue;
+            gameMenu.ProgressText.text =
+                $"{_runtimeData.KilledTargets} / {currentDifficult.TargetsForWin}";
             gameMenu.ProgressImage.fillAmount =
                 _runtimeData.KilledTargets / (float) currentDifficult.TargetsForWin;
         }

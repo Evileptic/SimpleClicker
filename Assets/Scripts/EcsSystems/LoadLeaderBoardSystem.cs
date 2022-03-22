@@ -39,8 +39,6 @@ namespace SimpleClicker
                     leaderView.NicknameText.text = leaderInfo.Nickname;
                     leaderView.ScoreText.text = $"{leaderInfo.Score:F1}";
                 }
-
-                _loadLeaderBoardFilter.GetEntity(index).Destroy();
             }
         }
     }

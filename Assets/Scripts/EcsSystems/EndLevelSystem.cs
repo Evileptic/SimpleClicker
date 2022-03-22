@@ -23,8 +23,6 @@ namespace SimpleClicker
                 
                 if (_endLevelFilter.Get1(index).IsWin)
                     _ecsWorld.NewEntity().Get<SaveLeaderBoardEvent>();
-
-                _endLevelFilter.GetEntity(index).Destroy();
             }
         }
     }

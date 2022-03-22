@@ -7,7 +7,6 @@ namespace SimpleClicker
 {
     public class TargetActor : Actor, IPointerClickHandler
     {
-        public int HealthPoints;
         public Image TargetImage;
         public RectTransform RectTransform;
         

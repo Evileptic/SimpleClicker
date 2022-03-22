@@ -40,8 +40,7 @@ namespace SimpleClicker
                 
                 targetActorRef.RectTransform.anchoredPosition = anchoredPos;
                 targetActorRef.TargetImage.sprite = _runtimeData.CurrentLevelData.TargetImage;
-                targetActorRef.HealthPoints = _runtimeData.CurrentLevelData.Difficult.TargetsHealthPoints;
-            
+
                 _spawnTargetFilter.GetEntity(index).Destroy();
             }
         }

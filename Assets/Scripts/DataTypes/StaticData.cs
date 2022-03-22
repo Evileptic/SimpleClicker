@@ -8,8 +8,8 @@ namespace SimpleClicker
         [Header("Properties")]
         public LevelData[] Levels;
         public DifficultData DefaultDifficult;
-        public int DefaultDamage;
-        public int WithBonusDamage;
+        public int WithoutDoubleBonus;
+        public int WithDoubleBonus;
         public string PlayerNickname;
         public string SaveDataFolder;
 
