@@ -35,6 +35,8 @@ namespace SimpleClicker
                 .Add(new SaveLeaderBoardSystem()).OneFrame<SaveLeaderBoardEvent>()
                 .Add(new LoadLeaderBoardSystem()).OneFrame<LoadLeaderBoardEvent>()
                 .Add(new ConfigMenuSystem())
+                .Add(new SpawnBonusSystem()).OneFrame<SpawnBonusEvent>()
+                .Add(new BonusSystem()).OneFrame<BonusClickEvent>()
 
                 .Inject(_runtimeData)
                 .Inject(_staticData)

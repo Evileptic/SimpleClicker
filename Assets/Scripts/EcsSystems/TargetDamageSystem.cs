@@ -19,7 +19,7 @@ namespace SimpleClicker
                 ref var targetEntity = ref _targetDamageFilter.GetEntity(index);
                 var targetActorRef = _targetDamageFilter.Get1(index).ActorRef;
 
-                int killValue = _runtimeData.DoubleDamageBonusEnabled
+                int killValue = _runtimeData.DoubleBonusEnabled
                     ? _staticData.WithDoubleBonus
                     : _staticData.WithoutDoubleBonus;
 
@@ -31,6 +31,9 @@ namespace SimpleClicker
                     _ecsWorld.NewEntity().Get<EndLevelEvent>().IsWin = true;
                 else
                     _ecsWorld.NewEntity().Get<SpawnTargetEvent>();
+
+                if (--_runtimeData.TargetBonusRemains == 0)
+                    _ecsWorld.NewEntity().Get<SpawnBonusEvent>();
             }
         }
 

@@ -9,6 +9,7 @@ namespace SimpleClicker
     {
         public Image TargetImage;
         public RectTransform RectTransform;
+        public Animator Animator;
         
         protected override void ExpandEntity(EcsEntity entity)
         {

@@ -4248,7 +4248,14 @@ MonoBehaviour:
     KilledTargets: 0
     PlayerTimer: 0
     SaveDataPath: 
-    DoubleDamageBonusEnabled: 0
+    BonusMode: 0
+    DoubleBonusEnabled: 0
+    SizeBonusEnabled: 0
+    FreezeBonusEnabled: 0
+    XSpawnMin: 0
+    XSpawnMax: 0
+    YSpawnMin: 0
+    YSpawnMax: 0
   _staticData: {fileID: 11400000, guid: 59265809052680341a6ae67fa65eee18, type: 2}
   _sceneData: {fileID: 1110706658}
 --- !u!4 &1110706660

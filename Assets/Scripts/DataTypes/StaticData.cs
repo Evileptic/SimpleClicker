@@ -12,15 +12,15 @@ namespace SimpleClicker
         public int WithDoubleBonus;
         public string PlayerNickname;
         public string SaveDataFolder;
+        public int TargetsForBonus;
+        public float SizeBonusMultiplier;
 
         [Header("Prefabs")] 
         public LevelEntryActor LevelEntryPrefab;
         public GameObject BlockedEntryPrefab;
         public TargetActor TargetPrefab;
         public LeaderView LeaderViewPrefab;
-        public BonusActor DoubleDamageBonusPrefab;
-        public BonusActor DoubleSizeBonusPrefab;
-        public BonusActor TargetStunBonusPrefab;
+        public BonusActor[] BonusActors;
 
         [Header("AudioClips")] 
         public AudioClip LevelClickClip;

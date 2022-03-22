@@ -15,6 +15,7 @@ namespace SimpleClicker
             _runtimeData.MainCamera = Camera.main;
             _runtimeData.SaveDataPath = $"{Application.dataPath}/{_staticData.SaveDataFolder}";
             _runtimeData.Leaderboard = new Dictionary<string, float>();
+            _runtimeData.TargetBonusRemains = _staticData.TargetsForBonus;
 
             var actors = Object.FindObjectsOfType<Actor>(true);
             foreach (var actor in actors)

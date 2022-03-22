@@ -19,17 +19,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9028dbe2c9e1bb7478df84974c629d4d, type: 2}
   - {fileID: 11400000, guid: 92232dfe1c28b8a4797ebc970ca8fed7, type: 2}
   DefaultDifficult: {fileID: 11400000, guid: c2ed1c3bf0065da4cab205c9479670ff, type: 2}
-  DefaultDamage: 1
-  WithBonusDamage: 2
+  WithoutDoubleBonus: 1
+  WithDoubleBonus: 2
   PlayerNickname: Player
   SaveDataFolder: SaveData
+  TargetsForBonus: 5
+  SizeBonusMultiplier: 2
   LevelEntryPrefab: {fileID: 4265718028842303522, guid: b0d4a09a5d35bc94c8d5b94acdf2a2ba, type: 3}
   BlockedEntryPrefab: {fileID: 6402776095575716021, guid: b1808a014b8e9694caf0e26104eb7a8b, type: 3}
   TargetPrefab: {fileID: 7308907100057158471, guid: 8a6d357cd6085a8499470cbcdd1c6a28, type: 3}
   LeaderViewPrefab: {fileID: 1538494230920610663, guid: 44f9e7727cf2ec6409b5fc1905e617e5, type: 3}
-  DoubleDamageBonusPrefab: {fileID: 0}
-  DoubleSizeBonusPrefab: {fileID: 0}
-  TargetStunBonusPrefab: {fileID: 0}
+  BonusActors:
+  - {fileID: 813228128974438118, guid: 34a49218bbf1aba4b95d83570b0e8b50, type: 3}
+  - {fileID: 813228128974438118, guid: f493bcc718c2b6343b51fbd3cdcc7934, type: 3}
+  - {fileID: 813228128974438118, guid: b63dc9e800f5e464e85cffbdbdd9e8bc, type: 3}
   LevelClickClip: {fileID: 8300000, guid: 0569126909b15a44e993a45d3a72fa86, type: 3}
   LevelClickClipVolume: 1.5
   StartGameClip: {fileID: 8300000, guid: 9f46795335616664fad1a0adff2c0735, type: 3}
