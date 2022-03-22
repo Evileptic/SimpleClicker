@@ -16,16 +16,14 @@ namespace SimpleClicker
             {
                 _ecsWorld.NewEntity().Get<StopTimerEvent>();
                 
-                if (_endLevelFilter.Get1(index).IsWin)
-                {
-
-                }
-
                 _sceneData.PlayGround.gameObject.SetActive(false);
                 _sceneData.UI.GameMenu.gameObject.SetActive(false);
                 _sceneData.UI.MainMenu.SetActive(true);
                 _sceneData.UI.LevelPreview.gameObject.SetActive(true);
                 
+                if (_endLevelFilter.Get1(index).IsWin)
+                    _ecsWorld.NewEntity().Get<SaveLeaderBoardEvent>();
+
                 _endLevelFilter.GetEntity(index).Destroy();
             }
         }

@@ -30,6 +30,7 @@ namespace SimpleClicker
                 ui.GameMenu.ProgressText.text = $"0 / {difficultData.TargetsForWin}";
                 ui.GameMenu.TargetsText.text = $"{difficultData.TargetsForWin}";
                 ui.GameMenu.TimerText.text = $"{difficultData.SecondsForLevel}";
+                ui.GameMenu.ProgressImage.fillAmount = 0f;
                 
                 playGround.gameObject.SetActive(true);
                 playGround.Background.sprite = levelData.BackgroundImage;

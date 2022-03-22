@@ -9,6 +9,7 @@ namespace SimpleClicker
 
         private StaticData _staticData;
         private SceneData _sceneData;
+        private EcsWorld _ecsWorld;
         
         public void Run()
         {
@@ -28,7 +29,8 @@ namespace SimpleClicker
 
                 for (int i = 0; i <= levelData.Difficult.DifficultLevel; i++)
                     levelPreviewRef.DifficultSculls[i].SetActive(true);
-                
+
+                _ecsWorld.NewEntity().Get<LoadLeaderBoardEvent>().LevelName = levelData.LevelName;
                 _levelPreviewFilter.GetEntity(index).Destroy();
             }
 

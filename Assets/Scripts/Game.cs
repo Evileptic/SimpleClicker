@@ -32,6 +32,8 @@ namespace SimpleClicker
                 .Add(new TargetDamageSystem())
                 .Add(new TimerSystem())
                 .Add(new EndLevelSystem())
+                .Add(new SaveLeaderBoardSystem()).OneFrame<SaveLeaderBoardEvent>()
+                .Add(new LoadLeaderBoardSystem())
 
                 .Inject(_runtimeData)
                 .Inject(_staticData)

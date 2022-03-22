@@ -27,7 +27,7 @@ namespace SimpleClicker
 
             foreach (var index in _startTimerFlagFilter)
             {
-                if (timer <= 1f)
+                if (timer <= 0f)
                 {
                     // WIN OR LOSE
                     _startTimerFlagFilter.GetEntity(index).Destroy();
@@ -35,7 +35,7 @@ namespace SimpleClicker
                 else
                 {
                     _sceneData.UI.GameMenu.TimerText.text = $"{(int) timer}";
-                    _runtimeData.LevelTimer += Time.deltaTime;
+                    _runtimeData.PlayerTimer += Time.deltaTime;
                     timer -= Time.deltaTime;
                 }
             }
@@ -52,6 +52,7 @@ namespace SimpleClicker
             if (_startTimerFlagFilter.GetEntitiesCount() > 0)
                 foreach (var timerIndex in _startTimerFlagFilter)
                     _startTimerFlagFilter.GetEntity(timerIndex).Destroy();
+            _runtimeData.PlayerTimer = 0f;
         }
     }
 }

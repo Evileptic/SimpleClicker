@@ -10,11 +10,14 @@ namespace SimpleClicker
         public DifficultData DefaultDifficult;
         public int DefaultDamage;
         public int WithBonusDamage;
+        public string PlayerNickname;
+        public string SaveDataFolder;
 
         [Header("Prefabs")] 
         public LevelEntryActor LevelEntryPrefab;
         public GameObject BlockedEntryPrefab;
         public TargetActor TargetPrefab;
+        public LeaderView LeaderViewPrefab;
         public BonusActor DoubleDamageBonusPrefab;
         public BonusActor DoubleSizeBonusPrefab;
         public BonusActor TargetStunBonusPrefab;

@@ -1,4 +1,3 @@
-using System;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +6,8 @@ namespace SimpleClicker
 {
     public class LevelPreviewActor : LevelWidgetActor
     {
+        public Transform LeaderBoard;
+        
         [SerializeField] private Button CloseButton;
 
         private void Start()
