@@ -25,19 +25,27 @@ namespace SimpleClicker
 
             _ecsSystems
                 .Add(new InitializeSystem())
-                .Add(new GenerateMenuSystem())
-                .Add(new LevelPreviewSystem())
+                .Add(new LoadPlayerDataSystem()).OneFrame<LoadPlayerDataEvent>()
+                .Add(new SavePlayerDataSystem()).OneFrame<SavePlayerDataEvent>()
+                .Add(new GenerateMenuSystem()).OneFrame<GenerateMenuEvent>()
+                .Add(new OpenLevelPreviewSystem()).OneFrame<OpenLevelPreviewEvent>()
+                .Add(new CloseLevelPreviewSystem()).OneFrame<CloseLevelPreviewEvent>()
+                .Add(new SetWinRateSystem()).OneFrame<SetWinRateEvent>()
+                
                 .Add(new StartGameSystem())
+                
+                .Add(new PlayTimerSystem())
                 .Add(new SpawnTargetSystem())
-                .Add(new TargetDamageSystem())
-                .Add(new TimerSystem())
+                .Add(new TargetDamageSystem()).OneFrame<TargetDamageEvent>()
                 .Add(new EndLevelSystem()).OneFrame<EndLevelEvent>()
-                .Add(new SaveLeaderBoardSystem()).OneFrame<SaveLeaderBoardEvent>()
-                .Add(new LoadLeaderBoardSystem()).OneFrame<LoadLeaderBoardEvent>()
-                .Add(new ConfigMenuSystem())
                 .Add(new SpawnBonusSystem()).OneFrame<SpawnBonusEvent>()
                 .Add(new BonusSystem()).OneFrame<BonusClickEvent>()
-
+                
+                .Add(new ConfigMenuSystem())
+                
+                .Add(new LoadLeaderBoardSystem()).OneFrame<LoadLeaderBoardEvent>()
+                .Add(new SaveLeaderBoardSystem()).OneFrame<SaveLeaderBoardEvent>()
+                
                 .Inject(_runtimeData)
                 .Inject(_staticData)
                 .Inject(_sceneData)

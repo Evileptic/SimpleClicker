@@ -10,7 +10,7 @@ namespace SimpleClicker
         public Toggle MusicToggle;
         public Button OpenButton;
         public Button CloseButton;
-        public GameObject MenuPanel;
+        public Animator Animator;
 
         protected override void ExpandEntity(EcsEntity entity)
         {
@@ -21,7 +21,7 @@ namespace SimpleClicker
             CloseButton.onClick.AddListener(OnCloseButtonClick);
         }
 
-        private void OnOpenButtonClick()=> _ecsWorld.NewEntity().Get<ConfigMenuOpenEvent>();
+        private void OnOpenButtonClick() => _ecsWorld.NewEntity().Get<ConfigMenuOpenEvent>();
         private void OnCloseButtonClick() => _ecsWorld.NewEntity().Get<ConfigMenuCloseEvent>();
         private void OnToggleClick(bool value) => _ecsEntity.Get<ChangeAudioSettingsEvent>();
         

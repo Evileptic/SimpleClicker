@@ -1,6 +1,6 @@
 ﻿namespace SimpleClicker
 {
-    public struct DamageEvent
+    public struct TargetDamageEvent
     {
     }
 }

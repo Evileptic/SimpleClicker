@@ -1,6 +1,6 @@
 ﻿namespace SimpleClicker
 {
-    public struct LevelPreviewCloseEvent
+    public struct CloseLevelPreviewEvent
     {
     }
 }

@@ -12,15 +12,18 @@ namespace SimpleClicker
 
         private StaticData _staticData;
         private SceneData _sceneData;
-        
+        private static readonly int AppearTrigger = Animator.StringToHash("Appear");
+        private static readonly int DisappearTrigger = Animator.StringToHash("Disappear");
+
         public void Run()
         {
             foreach (var index in _configMenuOpenFilter)
             {
-                _sceneData.UI.ConfigMenu.MenuPanel.SetActive(true);
+                _sceneData.UI.ConfigMenu.CloseButton.gameObject.SetActive(true);
                 _sceneData.AudioManager.EffectSource.PlayOneShot(
                     _staticData.LevelClickClip, 
                     _staticData.LevelClickClipVolume);
+                _sceneData.UI.ConfigMenu.Animator.SetTrigger(AppearTrigger);
                 _configMenuOpenFilter.GetEntity(index).Destroy();
             }
             
@@ -57,10 +60,11 @@ namespace SimpleClicker
 
             foreach (var index in _configMenuCloseFilter)
             {
-                _sceneData.UI.ConfigMenu.MenuPanel.SetActive(false);
+                _sceneData.UI.ConfigMenu.CloseButton.gameObject.SetActive(false);
                 _sceneData.AudioManager.EffectSource.PlayOneShot(
                     _staticData.LevelClickClip, 
                     _staticData.LevelClickClipVolume);
+                _sceneData.UI.ConfigMenu.Animator.SetTrigger(DisappearTrigger);
                 _configMenuCloseFilter.GetEntity(index).Destroy();;
             }
         }

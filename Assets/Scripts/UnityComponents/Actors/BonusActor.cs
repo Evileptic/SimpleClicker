@@ -12,14 +12,8 @@ namespace SimpleClicker
         public float BonusTime;
         public RectTransform RectTransform;
         
-        protected override void ExpandEntity(EcsEntity entity)
-        {
-            entity.Get<Bonus>().ActorRef = this;
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            _ecsEntity.Get<BonusClickEvent>();
-        }
+        protected override void ExpandEntity(EcsEntity entity) => entity.Get<Bonus>().ActorRef = this;
+        public void OnPointerClick(PointerEventData eventData) => _ecsEntity.Get<BonusClickEvent>();
+        private void OnDestroy() => _ecsEntity.Destroy();
     }
 }

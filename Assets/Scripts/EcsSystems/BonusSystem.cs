@@ -31,7 +31,7 @@ namespace SimpleClicker
                 }
                 Object.Destroy(bonusActorRef.gameObject);
                 _runtimeData.BonusMode = true;
-                
+                _runtimeData.PlayerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].UsedBonuses++;
                 _ecsWorld.NewEntity().Get<WaitForBonusEndFlag>().WaitTimer = bonusActorRef.BonusTime;
             }
 
@@ -44,6 +44,7 @@ namespace SimpleClicker
                     _runtimeData.DoubleBonusEnabled = false;
                     _runtimeData.SizeBonusEnabled = false;
                     _runtimeData.FreezeBonusEnabled = false;
+                    _runtimeData.TargetBonusRemains = _staticData.TargetsForBonus;
                     _waitForBonusEndFilter.GetEntity(index).Destroy();
                 }
                 else

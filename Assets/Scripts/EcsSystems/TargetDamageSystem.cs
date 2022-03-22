@@ -5,7 +5,7 @@ namespace SimpleClicker
 {
     public class TargetDamageSystem : IEcsRunSystem
     {
-        private EcsFilter<Target, DamageEvent> _targetDamageFilter;
+        private EcsFilter<Target, TargetDamageEvent> _targetDamageFilter;
 
         private RuntimeData _runtimeData;
         private StaticData _staticData;
@@ -27,7 +27,7 @@ namespace SimpleClicker
                 Object.Destroy(targetActorRef.gameObject);
                 SetUIProgress(killValue);
 
-                if (_runtimeData.CurrentLevelData.Difficult.TargetsForWin == _runtimeData.KilledTargets)
+                if (_runtimeData.KilledTargets >= _runtimeData.CurrentLevelData.Difficult.TargetsForWin)
                     _ecsWorld.NewEntity().Get<EndLevelEvent>().IsWin = true;
                 else
                     _ecsWorld.NewEntity().Get<SpawnTargetEvent>();

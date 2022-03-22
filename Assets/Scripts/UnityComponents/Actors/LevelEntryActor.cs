@@ -6,7 +6,7 @@ namespace SimpleClicker
     {
         protected override void OnEntryButtonClick()
         {
-            _ecsWorld.NewEntity().Get<LevelPreviewEvent>().LevelData = LevelData;
+            _ecsWorld.NewEntity().Get<OpenLevelPreviewEvent>().LevelData = LevelData;
         }
     }
 }

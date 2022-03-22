@@ -29,12 +29,9 @@ namespace SimpleClicker
                     for (int i = 0; i <= levelData.Difficult.DifficultLevel; i++)
                         levelEntryRef.DifficultSculls[i].SetActive(true);
                 }
-
-                // HACK: FAKE LEVELS FILL FOR SCROLL VIEW PRESENT
+                
                 for (int i = 0; i < 19; i++)
                     Object.Instantiate(_staticData.BlockedEntryPrefab, _sceneData.UI.LevelGridContainer);
-                
-                _generateMenuFilter.GetEntity(index).Destroy();
             }
         }
     }

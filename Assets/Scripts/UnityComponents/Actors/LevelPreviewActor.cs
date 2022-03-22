@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ namespace SimpleClicker
     public class LevelPreviewActor : LevelWidgetActor
     {
         public Transform LeaderBoard;
+        public TextMeshProUGUI WinrateText;
+        public TextMeshProUGUI UsedBonuses;
         
         [SerializeField] private Button CloseButton;
 
@@ -17,7 +20,7 @@ namespace SimpleClicker
 
         private void OnCloseButtonClick()
         {
-            _ecsWorld.NewEntity().Get<LevelPreviewCloseEvent>();
+            _ecsWorld.NewEntity().Get<CloseLevelPreviewEvent>();
         }
 
         protected override void OnEntryButtonClick()

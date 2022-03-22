@@ -18,7 +18,7 @@ namespace SimpleClicker
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            _ecsEntity.Get<DamageEvent>();
+            _ecsEntity.Get<TargetDamageEvent>();
         }
     }
 }

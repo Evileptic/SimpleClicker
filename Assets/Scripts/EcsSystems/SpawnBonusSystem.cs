@@ -31,8 +31,6 @@ namespace SimpleClicker
                 anchoredPos.y = Random.Range(_runtimeData.YSpawnMin, _runtimeData.YSpawnMax);
                 
                 targetActorRef.RectTransform.anchoredPosition = anchoredPos;
-
-                _runtimeData.TargetBonusRemains = _staticData.TargetsForBonus;
             }
         }
     }

@@ -41,10 +41,8 @@ namespace SimpleClicker
                 _runtimeData.KilledTargets = 0;
 
                 foreach (var bonusIndex in _bonusFilter)
-                {
-                    _bonusFilter.GetEntity(bonusIndex).Destroy();
                     Object.Destroy(_bonusFilter.Get1(bonusIndex).ActorRef.gameObject);
-                }
+                _runtimeData.TargetBonusRemains = _staticData.TargetsForBonus;
 
                 _ecsWorld.NewEntity().Get<StartTimerEvent>().Timer = difficultData.SecondsForLevel;
                 _ecsWorld.NewEntity().Get<SpawnTargetEvent>();

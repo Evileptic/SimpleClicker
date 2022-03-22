@@ -1,6 +1,6 @@
 ﻿namespace SimpleClicker
 {
-    public struct LevelPreviewEvent
+    public struct OpenLevelPreviewEvent
     {
         public LevelData LevelData;
     }

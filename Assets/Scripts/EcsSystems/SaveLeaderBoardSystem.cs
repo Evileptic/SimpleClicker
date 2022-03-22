@@ -31,6 +31,7 @@ namespace SimpleClicker
                 var leaderboardString = Encoding.ASCII.GetString(leaderboardContent);
                 var leaderboardData = JsonUtility.FromJson<Leaderboard>(leaderboardString);
                 var leaderboard = _runtimeData.Leaderboard;
+                leaderboard.Clear();
                 
                 foreach (var leaderInfo in leaderboardData.LeaderInfos)
                     leaderboard.Add(leaderInfo.Nickname, leaderInfo.Score);
@@ -61,6 +62,8 @@ namespace SimpleClicker
                 leaderboardString = JsonUtility.ToJson(leaderboardData);
                 leaderboardContent = Encoding.ASCII.GetBytes(leaderboardString);
                 File.WriteAllBytes($"{_runtimeData.SaveDataPath}/{levelName}.json", leaderboardContent);
+                
+                leaderboard.Clear();
                 
                 _ecsWorld.NewEntity().Get<LoadLeaderBoardEvent>().LevelName = _runtimeData.CurrentLevelData.LevelName;
             }

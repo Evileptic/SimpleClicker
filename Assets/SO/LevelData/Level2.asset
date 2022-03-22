@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0401071505fb73943bdf168cee48a29b, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
+  Id: 1
   LevelName: Fog of War
   Difficult: {fileID: 11400000, guid: 59968d02cd0168f4b874c43779bc6fcd, type: 2}
   BackgroundImage: {fileID: 21300000, guid: f89c96bd6beab194c9d09d7d8e0175ed, type: 3}

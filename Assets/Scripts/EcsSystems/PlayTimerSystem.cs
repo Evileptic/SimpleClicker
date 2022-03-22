@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SimpleClicker
 {
-    public class TimerSystem : IEcsRunSystem
+    public class PlayTimerSystem : IEcsRunSystem
     {
         private EcsFilter<StartTimerEvent> _startTimerEventFilter;
         private EcsFilter<StartTimerFlag> _startTimerFlagFilter;
@@ -29,7 +29,7 @@ namespace SimpleClicker
             {
                 if (timer <= 0f)
                 {
-                    // WIN OR LOSE
+                    _ecsWorld.NewEntity().Get<EndLevelEvent>().IsWin = false;
                     _startTimerFlagFilter.GetEntity(index).Destroy();
                 }
                 else
