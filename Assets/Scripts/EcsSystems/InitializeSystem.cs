@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -28,6 +29,9 @@ namespace SimpleClicker
             _runtimeData.YSpawnMin = -canvasRect.height / 2f + targetRect.height / 2f + _staticData.SpawnLimitShift;;
             _runtimeData.YSpawnMax = -_runtimeData.YSpawnMin;
 
+            if (!Directory.Exists(_runtimeData.SaveDataPath))
+                Directory.CreateDirectory(_runtimeData.SaveDataPath);
+            
             _ecsWorld.NewEntity().Get<LoadPlayerDataEvent>();
             _ecsWorld.NewEntity().Get<GenerateMenuEvent>();
             _ecsWorld.NewEntity().Get<LoadAudioSettingsEvent>();

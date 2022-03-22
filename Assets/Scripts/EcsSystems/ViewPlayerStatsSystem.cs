@@ -2,9 +2,9 @@
 
 namespace SimpleClicker
 {
-    public class SetWinRateSystem : IEcsRunSystem
+    public class ViewPlayerStatsSystem : IEcsRunSystem
     {
-        private EcsFilter<SetWinRateEvent> _setWinRateFilter;
+        private EcsFilter<ViewPlayerStatsEvent> _setWinRateFilter;
         
         private RuntimeData _runtimeData;
         private StaticData _staticData;
@@ -15,10 +15,11 @@ namespace SimpleClicker
         {
             foreach (var index in _setWinRateFilter)
             {
-                var levelId = _setWinRateFilter.Get1(index).LevelId;
-                
+                var levelData = _setWinRateFilter.Get1(index).LevelData;
+                var playerData = _runtimeData.PlayerData;
+
                 int winRate = 0;
-                var playerLevelData = _runtimeData.PlayerData.PlayerLevelsData[levelId];
+                var playerLevelData = playerData.PlayerLevelsData[levelData.Id];
                 if (playerLevelData.Loses > 0 || playerLevelData.Wins > 0)
                     winRate = 100 / (playerLevelData.Loses + playerLevelData.Wins) * playerLevelData.Wins;
 

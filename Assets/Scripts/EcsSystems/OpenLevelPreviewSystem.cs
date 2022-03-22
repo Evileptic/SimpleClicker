@@ -30,7 +30,7 @@ namespace SimpleClicker
                 for (int i = 0; i <= levelData.Difficult.DifficultLevel; i++)
                     levelPreviewRef.DifficultSculls[i].SetActive(true);
 
-                _ecsWorld.NewEntity().Get<SetWinRateEvent>().LevelId = levelData.Id;
+                _ecsWorld.NewEntity().Get<ViewPlayerStatsEvent>().LevelData = levelData;
                 _ecsWorld.NewEntity().Get<LoadLeaderBoardEvent>().LevelName = levelData.LevelName;
             }
         }

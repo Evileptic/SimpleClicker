@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SimpleClicker
 {
-    public class LoadLeaderBoardSystem : IEcsInitSystem, IEcsRunSystem
+    public class LoadLeaderBoardSystem : IEcsRunSystem
     {
         private EcsFilter<LoadLeaderBoardEvent> _loadLeaderBoardFilter;
         
@@ -14,12 +14,6 @@ namespace SimpleClicker
         private SceneData _sceneData;
         private EcsWorld _ecsWorld;
 
-        public void Init()
-        {
-            if (!Directory.Exists(_runtimeData.SaveDataPath))
-                Directory.CreateDirectory(_runtimeData.SaveDataPath);
-        }
-        
         public void Run()
         {
             foreach (var index in _loadLeaderBoardFilter)

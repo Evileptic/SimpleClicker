@@ -38,7 +38,7 @@ namespace SimpleClicker
                     playerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].Loses++;
                 }
 
-                _ecsWorld.NewEntity().Get<SetWinRateEvent>().LevelId = _runtimeData.CurrentLevelData.Id;
+                _ecsWorld.NewEntity().Get<ViewPlayerStatsEvent>().LevelData = _runtimeData.CurrentLevelData;
                 _ecsWorld.NewEntity().Get<SavePlayerDataEvent>();
             }
         }

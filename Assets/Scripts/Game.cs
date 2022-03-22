@@ -30,7 +30,7 @@ namespace SimpleClicker
                 .Add(new GenerateMenuSystem()).OneFrame<GenerateMenuEvent>()
                 .Add(new OpenLevelPreviewSystem()).OneFrame<OpenLevelPreviewEvent>()
                 .Add(new CloseLevelPreviewSystem()).OneFrame<CloseLevelPreviewEvent>()
-                .Add(new SetWinRateSystem()).OneFrame<SetWinRateEvent>()
+                .Add(new ViewPlayerStatsSystem()).OneFrame<ViewPlayerStatsEvent>()
                 .Add(new SetLevelsProgressSystem()).OneFrame<SetLevelProgressEvent>()
                 
                 .Add(new StartGameSystem())
