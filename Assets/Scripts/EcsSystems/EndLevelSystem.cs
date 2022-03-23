@@ -1,12 +1,16 @@
 ﻿using Leopotam.Ecs;
+using UnityEngine;
 
 namespace SimpleClicker
 {
     public class EndLevelSystem : IEcsRunSystem
     {
         private EcsFilter<EndLevelEvent> _endLevelFilter;
+        private EcsFilter<Target> _targetFilter;
+        private EcsFilter<Bonus> _bonusFilter;
 
         private RuntimeData _runtimeData;
+        private StaticData _staticData;
         private SceneData _sceneData;
         private EcsWorld _ecsWorld;
         
@@ -38,6 +42,15 @@ namespace SimpleClicker
                     playerData.PlayerLevelsData[_runtimeData.CurrentLevelData.Id].Loses++;
                 }
 
+                _runtimeData.TargetBonusRemains = _staticData.TargetsForBonus;
+                
+                foreach (var targetIndex in _targetFilter)
+                    if (_targetFilter.Get1(targetIndex).ActorRef)
+                        Object.Destroy(_targetFilter.Get1(targetIndex).ActorRef.gameObject);
+                foreach (var bonusIndex in _bonusFilter)
+                    if(_bonusFilter.Get1(bonusIndex).ActorRef)
+                        Object.Destroy(_bonusFilter.Get1(bonusIndex).ActorRef.gameObject);
+                
                 _ecsWorld.NewEntity().Get<ViewPlayerStatsEvent>().LevelData = _runtimeData.CurrentLevelData;
                 _ecsWorld.NewEntity().Get<SavePlayerDataEvent>();
             }
